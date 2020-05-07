@@ -9,6 +9,7 @@ double solver::solve(RealVariable var){
     if(var.getA()==0 && var.getB()==0)  throw std::invalid_argument("Error!!!");
     if(var.getA()<0  && var.getB()==0 && var.getC()<0)  throw std::invalid_argument("Error!!");
     double a = var.getA(),b = var.getB(), c = var.getC();
+    
     double ans=0;
     if(a!=0)  ans = (-b + sqrt(b*b-4*a*c))/(2*a);
     else ans = c/b;
@@ -45,10 +46,10 @@ RealVariable solver::operator==(const RealVariable& x, const double& num){
         ans.setA(x.a);
     }
     else {
-        ans.setB(-x.b);
-        ans.setA(-x.a);
+        ans.setB(x.b);
+        ans.setA(x.a);
     }
-    ans.setC(num-x.c);
+    ans.setC(x.c-num);
     return ans;
 }
 RealVariable solver::operator^(const RealVariable& x, const double& num){
@@ -97,6 +98,7 @@ RealVariable solver::operator+(const RealVariable& x, const double& num){
     return ans;
 }
 RealVariable solver::operator/(const RealVariable& x, const double& num){
+    if(num==0) throw std::invalid_argument("Error!!");
     RealVariable ans;
     ans.setA(x.a/num);
     ans.setB(x.b/num);
