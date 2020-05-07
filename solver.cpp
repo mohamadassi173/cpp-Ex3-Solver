@@ -6,6 +6,8 @@
 using namespace solver;
 
 double solver::solve(RealVariable var){
+    if(var.getA()==0 && var.getB()==0)  throw std::invalid_argument("the word not exist");
+    if(var.getA()!=0 && var.getB()==0 && var.getC()<0)  throw std::invalid_argument("the word not exist");
     double a = var.getA(),b = var.getB(), c = var.getC();
     double ans=0;
     if(a!=0)  ans = (-b + sqrt(b*b-4*a*c))/(2*a);
@@ -161,6 +163,7 @@ ComplexVariable solver::operator/(const ComplexVariable& x, const double& num){
 }
 ComplexVariable solver::operator^(const ComplexVariable& x, const double& num){
     ComplexVariable ans;
+    if(num==0)  throw std::invalid_argument("the word not exist");
     if(num==1) ans.setB(num);
     else {
         ans.setA(1);
