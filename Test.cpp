@@ -47,7 +47,7 @@ TEST_CASE("Test case 1 | - x |") {
     CHECK(solve(-1*x-5-x-7-x==-7-x-1-x) == -4);
 }
 
-TEST_CASE("Test case 1 | \ x |") {
+TEST_CASE("Test case 1 | x |") {
     RealVariable x;    
     CHECK(solve(x/1==7/1) == 7.0);
    // CHECK(solve(x+x/x==8) == 7.0);
@@ -82,7 +82,7 @@ TEST_CASE("Test case 1 | - (x^2) |") {
 }
 
 
-TEST_CASE("Test case 1 | \ (x^2) |") {
+TEST_CASE("Test case 1 |  (x^2) |") {
     RealVariable x;    
     CHECK(solve((x^2)/1==16/1) == 4);
     CHECK(solve((x^2)+1/2==16+1/2) == 4);
@@ -180,7 +180,7 @@ TEST_CASE("Test case 1 | - y |") {
    // CHECK(solve(-y-5-y-7-y-i==-7-y-1-y) == -4-i);
 }
 
-TEST_CASE("Test case 1 | \ y |") {
+TEST_CASE("Test case 1 |  y |") {
     RealVariable y;    
    // CHECK(solve(y/1==7/1+8i) == 7.0+8i);
    // CHECK(solve(y+y/y+9i==8+5i) == 3.5-2i);
@@ -207,7 +207,7 @@ TEST_CASE("Test case 1 | + (y^2) |") {
   //  CHECK(solve((y^2)+9i-10+(y^2)-7+(y^2)==7+(y^2)+1+(y^2)+9i) == 5+0i);
 }
 
-TEST_CASE("Test case 1 | \ (x^2) |") {
+TEST_CASE("Test case 1 |  (x^2) |") {
     RealVariable y;    
    // CHECK(solve((y^2)/1+8i==16/1+8i) == 4+0i);
    // CHECK(solve((y^2)+1/2+9i==16+1/2+9i) == 4+0i);
