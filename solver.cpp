@@ -7,7 +7,7 @@ using namespace solver;
 
 double solver::solve(RealVariable var){
     if(var.getA()==0 && var.getB()==0)  throw std::invalid_argument("Error!!!");
-    if(var.getA()>0  && var.getB()==0 && var.getC()<0)  throw std::invalid_argument("Error!!");
+    if(var.getA()<0  && var.getB()==0 && var.getC()<0)  throw std::invalid_argument("Error!!");
     double a = var.getA(),b = var.getB(), c = var.getC();
     double ans=0;
     if(a!=0)  ans = (-b + sqrt(b*b-4*a*c))/(2*a);
